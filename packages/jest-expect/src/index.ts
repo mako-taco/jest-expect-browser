@@ -6,14 +6,6 @@
  */
 
 import {expect} from 'expect';
-import {
-  addSerializer,
-  toMatchInlineSnapshot,
-  toMatchSnapshot,
-  toThrowErrorMatchingInlineSnapshot,
-  toThrowErrorMatchingSnapshot,
-} from 'jest-snapshot';
-import type {JestExpect} from './types';
 
 export type {
   AsymmetricMatchers,
@@ -24,19 +16,3 @@ export type {
   MatcherState,
   MatcherUtils,
 } from 'expect';
-export type {JestExpect} from './types';
-
-function createJestExpect(): JestExpect {
-  expect.extend({
-    toMatchInlineSnapshot,
-    toMatchSnapshot,
-    toThrowErrorMatchingInlineSnapshot,
-    toThrowErrorMatchingSnapshot,
-  });
-
-  expect.addSnapshotSerializer = addSerializer;
-
-  return expect as JestExpect;
-}
-
-export const jestExpect = createJestExpect();

@@ -9,6 +9,7 @@
     "@babel/preset-react": "^7.12.1",
     "@babel/preset-typescript": "^7.0.0",
     "@babel/register": "^7.0.0",
+    "@browserify/uglifyify": "^6.0.0",
     "@crowdin/cli": "^3.5.2",
     "@jest/globals": "workspace:^",
     "@jest/test-utils": "workspace:^",
@@ -86,12 +87,13 @@
     "tinyify": "^4.0.0",
     "ts-node": "^10.5.0",
     "typescript": "^5.0.4",
+    "uglify-js": "^3.18.0",
     "which": "^3.0.0"
   },
   "scripts": {
     "build-clean": "rimraf --glob './packages/*/build' './packages/*/dist' './packages/*/tsconfig.tsbuildinfo' './packages/*/api-extractor.json' './api-extractor.json'",
     "build": "yarn build:js && yarn build:ts && yarn bundle:ts",
-    "build:expect": "yarn run browserify expect.js",
+    "build:expect": "yarn run browserify expect.js | yarn run uglifyjs",
     "build:js": "node ./scripts/build.mjs",
     "build:ts": "node ./scripts/buildTs.mjs",
     "bundle:ts": "node ./scripts/bundleTs.mjs",

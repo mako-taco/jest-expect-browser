@@ -3216,6 +3216,7 @@ __metadata:
     "@babel/preset-react": ^7.12.1
     "@babel/preset-typescript": ^7.0.0
     "@babel/register": ^7.0.0
+    "@browserify/uglifyify": ^6.0.0
     "@crowdin/cli": ^3.5.2
     "@jest/globals": "workspace:^"
     "@jest/test-utils": "workspace:^"
@@ -3293,6 +3294,7 @@ __metadata:
     tinyify: ^4.0.0
     ts-node: ^10.5.0
     typescript: ^5.0.4
+    uglify-js: ^3.18.0
     which: ^3.0.0
   languageName: unknown
   linkType: soft
@@ -22698,6 +22700,15 @@ __metadata:
   bin:
     uglifyjs: bin/uglifyjs
   checksum: 7b3897df38b6fc7d7d9f4dcd658599d81aa2b1fb0d074829dd4e5290f7318dbca1f4af2f45acb833b95b1fe0ed4698662ab61b87e94328eb4c0a0d3435baf924
+  languageName: node
+  linkType: hard
+
+"uglify-js@npm:^3.18.0":
+  version: 3.18.0
+  resolution: "uglify-js@npm:3.18.0"
+  bin:
+    uglifyjs: bin/uglifyjs
+  checksum: 887733d05d4139a94dffd04a5f07ee7d8be70201c016ea48cb82703778b5c48fadbe6e5e7ac956425522f72e657d3eade23f06ae8a0e2eeed2d684bf6cc25e36
   languageName: node
   linkType: hard
 
