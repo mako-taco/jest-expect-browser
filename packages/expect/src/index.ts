@@ -10,7 +10,6 @@
 
 import {equals, iterableEquality, subsetEquality} from '@jest/expect-utils';
 import * as matcherUtils from 'jest-matcher-utils';
-import {isPromise} from 'jest-util';
 import {
   any,
   anything,
@@ -69,6 +68,16 @@ export type {
   Matchers,
   SyncExpectationResult,
 } from './types';
+
+function isPromise<T = unknown>(
+  candidate: unknown,
+): candidate is PromiseLike<T> {
+  return (
+    candidate != null &&
+    (typeof candidate === 'object' || typeof candidate === 'function') &&
+    typeof (candidate as any).then === 'function'
+  );
+}
 
 export class JestAssertionError extends Error {
   matcherResult?: Omit<SyncExpectationResult, 'message'> & {message: string};

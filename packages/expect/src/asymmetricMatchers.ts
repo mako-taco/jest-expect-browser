@@ -14,13 +14,16 @@ import {
   subsetEquality,
 } from '@jest/expect-utils';
 import * as matcherUtils from 'jest-matcher-utils';
-import {pluralize} from 'jest-util';
 import {getCustomEqualityTesters, getState} from './jestMatchersObject';
 import type {
   AsymmetricMatcher as AsymmetricMatcherInterface,
   MatcherContext,
   MatcherState,
 } from './types';
+
+function pluralize(word: string, count: number, ending = 's'): string {
+  return `${count} ${word}${count === 1 ? '' : ending}`;
+}
 
 const functionToString = Function.prototype.toString;
 
